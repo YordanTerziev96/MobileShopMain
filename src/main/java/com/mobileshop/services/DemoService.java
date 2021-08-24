@@ -1,6 +1,11 @@
 package com.mobileshop.services;
 
+import com.mobileshop.factory.VehicleFactory;
 import com.mobileshop.models.Pomiqr;
+import com.mobileshop.models.Vehicle;
+import com.mobileshop.models.Аdvertisement;
+import com.mobileshop.models.АdvertisementDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -34,6 +39,14 @@ public class DemoService {
 				.setParameter("username", username).setParameter("password", password).getResultList();
 
 		return pomiqri.get(0);
+	}
+
+	public void createAdvertisement(АdvertisementDTO dto){
+
+		Vehicle vehicle = VehicleFactory.buildVehicle(dto.getType());
+		Аdvertisement adv = new Аdvertisement();
+		adv.setVehicle(vehicle);
+
 	}
 
 }

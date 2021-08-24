@@ -28,6 +28,8 @@ public class DemoController {
 	@RequestMapping(value = "/get", method = RequestMethod.GET, params = {"username", "password"})
 	@ResponseBody
 	public ResponseEntity<?> getData(String username, String password){
+		String baseURL = "localhost:8080";
+		String url = baseURL + "?" + username + "&" + password;
 
 		return new ResponseEntity<>(ds.getData(username, password), HttpStatus.OK);
 	}
