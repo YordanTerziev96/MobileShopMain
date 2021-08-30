@@ -1,12 +1,13 @@
 package com.mobileshop.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @MappedSuperclass
-public class BaseEntity {
+public class BaseEntity implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue
 	@Column(name="id")
 	private Long id;
 

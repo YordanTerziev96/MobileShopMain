@@ -1,15 +1,40 @@
 package com.mobileshop.models;
 
-public abstract class Vehicle {
+import javax.persistence.*;
+import java.io.Serializable;
 
+
+@Entity
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public abstract class Vehicle extends BaseEntity implements Serializable {
+
+	@Column(name = "brand", nullable = false)
 	protected String brand;
+
+	@Column(name = "yearOfCreation", nullable = false)
 	protected int yearOfCreation;
+
+	@Column(name = "engineType", nullable = false)
 	protected String engineType;
+
+	@Column(name = "region", nullable = false)
 	protected String region;
+
+	@Column(name = "subRegion", nullable = false)
 	protected String subRegion;
+
+	@Column(name = "price", nullable = false)
 	protected double price;
+
+	@Column(name = "colour", nullable = false)
 	protected String colour;
+
+	@Column(name = "kmDriven", nullable = false)
 	protected int kmDriven;
+
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "advertisement_id", nullable = false)
+	private Advertisement advertisement;
 
 
 	public void setBrand(String brand) {
