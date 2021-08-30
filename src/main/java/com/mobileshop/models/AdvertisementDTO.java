@@ -1,7 +1,7 @@
 package com.mobileshop.models;
 
 
-public class АdvertisementDTO {
+public class AdvertisementDTO {
 	private String type;
 
 	public String getType() {
