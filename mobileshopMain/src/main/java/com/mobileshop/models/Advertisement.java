@@ -13,6 +13,17 @@ public class Advertisement extends BaseEntity implements Serializable {
 			mappedBy = "advertisement")
 	private Vehicle vehicle;
 
+	@Column(name = "description", nullable = false)
+	private String description;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	@OneToMany(mappedBy = "advertisement", cascade = CascadeType.ALL)
 	private List<Image> images;
 
