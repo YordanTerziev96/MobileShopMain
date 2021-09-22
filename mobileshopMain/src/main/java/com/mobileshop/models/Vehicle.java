@@ -8,11 +8,25 @@ import java.io.Serializable;
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Vehicle extends BaseEntity implements Serializable {
 
+	@Column(name = "horsepower")
+	protected int horsePower;
+
 	@Column(name = "brand", nullable = false)
 	protected String brand;
 
+	public int getHorsePower() {
+		return horsePower;
+	}
+
+	public void setHorsePower(int horsePower) {
+		this.horsePower = horsePower;
+	}
+
 	@Column(name = "yearOfCreation", nullable = false)
 	protected int yearOfCreation;
+
+	@Column(name = "monthOfCreation", nullable = false)
+	protected String monthOfCreation;
 
 	@Column(name = "engineType", nullable = false)
 	protected String engineType;
@@ -26,8 +40,35 @@ public abstract class Vehicle extends BaseEntity implements Serializable {
 	@Column(name = "price", nullable = false)
 	protected double price;
 
+	@Column(name = "currency", nullable = false)
+	protected String currency;
+
 	@Column(name = "colour", nullable = false)
 	protected String colour;
+
+	public String getMonthOfCreation() {
+		return monthOfCreation;
+	}
+
+	public void setMonthOfCreation(String monthOfCreation) {
+		this.monthOfCreation = monthOfCreation;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public Advertisement getAdvertisement() {
+		return advertisement;
+	}
+
+	public void setAdvertisement(Advertisement advertisement) {
+		this.advertisement = advertisement;
+	}
 
 	@Column(name = "kmDriven", nullable = false)
 	protected int kmDriven;
@@ -35,7 +76,6 @@ public abstract class Vehicle extends BaseEntity implements Serializable {
 	@OneToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "advertisement_id", nullable = false)
 	private Advertisement advertisement;
-
 
 	public void setBrand(String brand) {
 		this.brand = brand;

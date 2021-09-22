@@ -10,8 +10,6 @@ import java.io.Serializable;
 @Entity
 public class Car extends Vehicle implements Serializable {
 
-	@Column(name = "horsepower", nullable = false)
-	private int horsepower;
 
 	@Enumerated(EnumType.STRING)
 	private GearboxType gearboxType;
@@ -35,11 +33,4 @@ public class Car extends Vehicle implements Serializable {
 		this.categoryType = categoryType;
 	}
 
-	public int getHorsepower() {
-		return horsepower;
-	}
-
-	public void setHorsepower(int horsepower) {
-		this.horsepower = horsepower;
-	}
 }
