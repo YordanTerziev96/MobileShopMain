@@ -8,8 +8,19 @@ import java.io.Serializable;
 @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class Vehicle extends BaseEntity implements Serializable {
 
+	@Column(name = "horsepower")
+	protected int horsePower;
+
 	@Column(name = "brand", nullable = false)
 	protected String brand;
+
+	public int getHorsePower() {
+		return horsePower;
+	}
+
+	public void setHorsePower(int horsePower) {
+		this.horsePower = horsePower;
+	}
 
 	@Column(name = "yearOfCreation", nullable = false)
 	protected int yearOfCreation;

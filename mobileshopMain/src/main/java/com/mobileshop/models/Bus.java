@@ -12,19 +12,8 @@ import java.io.Serializable;
 @Entity
 public class Bus extends Vehicle implements Serializable {
 
-	@Column(name = "horsepower", nullable = false)
-	private int horsepower;
-
 	@Enumerated(EnumType.STRING)
 	private GearboxType gearboxType;
-
-	public int getHorsepower() {
-		return horsepower;
-	}
-
-	public void setHorsepower(int horsepower) {
-		this.horsepower = horsepower;
-	}
 
 	public GearboxType getGearboxType() {
 		return gearboxType;
