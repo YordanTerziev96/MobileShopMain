@@ -30,11 +30,11 @@
             "styles": [
               "src/styles.css",
               "src/assets/css/noscript.css",
-              "src/assets/bootstrap/css/bootstrap.min.css",
-              "src/assets/css/main.css",
               "src/assets/css/font-awesome.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,18 +93,22 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/assets/images"
+              "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "src/assets/css/noscript.css",
-              "src/assets/bootstrap/css/bootstrap.min.css",
-              "src/assets/css/main.css",
               "src/assets/css/font-awesome.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "script-loader!./src/assets/js/breakpoints.min.js",
+              "script-loader!./src/assets/js/browser.min.js",
+              "script-loader!./src/assets/js/jquery.min.js",
+              "script-loader!./src/assets/js/jquery.scrollex.min.js",
+              "script-loader!./src/assets/js/jquery.scrolly.min.js",
+              "script-loader!./src/assets/js/main.js",
+              "script-loader!./src/assets/js/util.js",
+            ]
           }
         },
         "lint": {
@@ -130,7 +134,8 @@
             "production": {
               "devServerTarget": "mobileshopFE:serve:production"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         }
       }
     }},
