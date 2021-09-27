@@ -1,11 +1,13 @@
-(function($) {
+function asd() {
 
+  console.log('tuka sme');
 	/**
 	 * Generate an indented list of links from a nav. Meant for use with panel().
 	 * @return {jQuery} jQuery object.
 	 */
 	$.fn.navList = function() {
 
+    console.log('i tuka');
 		var	$this = $(this);
 			$a = $this.find('a'),
 			b = [];
@@ -584,4 +586,4 @@
 
 	};
 
-})(jQuery);
+}
