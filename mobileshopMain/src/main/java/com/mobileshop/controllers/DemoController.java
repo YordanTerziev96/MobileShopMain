@@ -13,7 +13,7 @@ public class DemoController {
 	@Autowired
 	public DemoService ds;
 
-	@GetMapping("/")
+	@GetMapping("/sada")
 	public String index() {
 		return "Hop trop";
 	}
